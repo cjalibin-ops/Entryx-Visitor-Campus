@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EntryX | Visitor Policy</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-slate-900 font-sans">
+    <nav id="navbar" class="fixed top-0 w-full z-50 py-1 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <a href="../../index.html" class="flex items-center space-x-3">
+                     <img src="../image/title.png" alt="UNP Logo" class="hidden min-[770px]:block w-150px sm:w-16 md:w-20 h-auto">
+                </a>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="../../index.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="home" class="w-4 h-4"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="./about.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="info" class="w-4 h-4"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="./map.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i>
+                        <span>Map</span>
+                    </a>
+                    <a href="./policy.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        <span>Policy</span>
+                    </a>
+                    <a href="./contact.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="phone-call" class="w-4 h-4"></i>
+                        <span>Contact</span>
+                    </a>
+                    <a href="./help.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="help-circle" class="w-4 h-4"></i>
+                        <span>Help</span>
+                    </a>
+                    <div class="w-px h-6 bg-slate-200 mx-2"></div>
+                    <a href="./signin.html" class="flex items-center space-x-2 px-5 py-2.5 bg-slate-900 text-white rounded-full text-sm font-bold hover:bg-slate-800 transition-all shadow-md">
+                        <i data-lucide="log-in" class="w-4 h-4"></i>
+                        <span>Sign In</span>
+                    </a>
+                </div>
+                <button id="mobile-toggle" class="md:hidden p-2 rounded-xl text-slate-600 hover:bg-slate-100">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" 
+        class="fixed top-0 left-0 w-full z-[60] bg-slate-100 
+                -translate-y-full transition-transform duration-300 
+                max-h-[70vh] overflow-y-auto rounded-b-2xl shadow-lg hidden">
+
+        <!-- Header -->
+        <div class="p-4 flex justify-between items-center border-b border-slate-200">
+            <span class="font-semibold text-lg text-slate-700">Menu</span>
+            <button id="mobile-close" class="p-2 rounded-lg text-slate-500 hover:bg-slate-200">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="px-3 py-2 space-y-1">
+
+            <a href="../../index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-200 transition">
+                <i data-lucide="home" class="w-5 h-5"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="./about.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-200 transition">
+                <i data-lucide="info" class="w-5 h-5"></i>
+                <span>About</span>
+            </a>
+
+            <a href="./map.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-200 transition">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                <span>Map</span>
+            </a>
+
+            <a href="./policy.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-100 text-blue-600 font-medium">
+                <i data-lucide="file-text" class="w-5 h-5"></i>
+                <span>Policy</span>
+            </a>
+
+            <a href="./contact.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-200 transition">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+                <span>Contact</span>
+            </a>
+
+            <a href="./help.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-200 transition">
+                <i data-lucide="help-circle" class="w-5 h-5"></i>
+                <span>Help</span>
+            </a>
+        </div>
+    </div>
+
+    <main class="py-24 bg-brand-gray min-h-screen mt-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16 reveal">
+                    <h1 class="font-display font-bold text-4xl text-slate-900 mb-4 tracking-tight">EntryX <span class="text-brand-blue">Policies</span></h1>
+                    <p class="text-slate-500 max-w-2xl mx-auto font-light">Essential rules and guidelines to ensure a safe, secure, and productive environment for everyone at the University of Northern Philippines.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                    <!-- Sidebar Tabs -->
+                    <div class="flex lg:flex-col gap-2 overflow-x-auto pb-4 lg:pb-0 reveal active">
+                        <button class="policy-tab active flex items-center gap-3 px-6 py-4 rounded-2xl text-sm font-bold transition-all border whitespace-nowrap lg:whitespace-normal text-left bg-brand-blue text-white border-brand-blue shadow-lg shadow-brand-blue/20" data-tab="access">
+                            <i data-lucide="users" class="w-5 h-5 hidden lg:block"></i> Visitor Access
+                        </button>
+                        <button class="policy-tab flex items-center gap-3 px-6 py-4 rounded-2xl text-sm font-bold transition-all border whitespace-nowrap lg:whitespace-normal text-left bg-white text-slate-500 border-slate-100 hover:border-brand-blue" data-tab="parking">
+                            <i data-lucide="car" class="w-5 h-5 hidden lg:block"></i> Parking
+                        </button>
+                        <button class="policy-tab flex items-center gap-3 px-6 py-4 rounded-2xl text-sm font-bold transition-all border whitespace-nowrap lg:whitespace-normal text-left bg-white text-slate-500 border-slate-100 hover:border-brand-blue" data-tab="conduct">
+                            <i data-lucide="shield-alert" class="w-5 h-5 hidden lg:block"></i> Conduct
+                        </button>
+                        <button class="policy-tab flex items-center gap-3 px-6 py-4 rounded-2xl text-sm font-bold transition-all border whitespace-nowrap lg:whitespace-normal text-left bg-white text-slate-500 border-slate-100 hover:border-brand-blue" data-tab="safety">
+                            <i data-lucide="stethoscope" class="w-5 h-5 hidden lg:block"></i> Safety
+                        </button>
+                    </div>
+
+                    <!-- Content Area -->
+                    <div class="lg:col-span-3 reveal">
+                        <div id="policy-content" class="bg-white p-8 md:p-14 rounded-5xl border border-slate-100 shadow-sm relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
+                                <i data-lucide="file-text" class="w-32 h-32 rotate-12"></i>
+                            </div>
+                            
+                            <div id="policy-pane-access" class="policy-pane active">
+                                <div class="flex items-center gap-4 mb-10">
+                                    <div class="w-16 h-16 rounded-2xl bg-brand-blue/10 text-brand-blue flex items-center justify-center">
+                                        <i data-lucide="users" class="w-8 h-8"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="font-display font-bold text-3xl text-slate-900 leading-none">Campus Access Guidelines</h2>
+                                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-3 block">Official Registry: Access-01</span>
+                                    </div>
+                                </div>
+                                <div class="space-y-8">
+                                    <div>
+                                        <h3 class="font-bold text-lg text-slate-800 mb-2 flex items-center gap-3">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span> RFID Registration
+                                        </h3>
+                                        <p class="text-slate-500 leading-relaxed font-light pl-4.5">
+                                            All visitors and new users must complete registration at the EntryX reception before entering the campus. 
+                                            After successful registration, an RFID card will be issued for secure and efficient access.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg text-slate-800 mb-2 flex items-center gap-3">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span> RFID Usage
+                                        </h3>
+                                        <p class="text-slate-500 leading-relaxed font-light pl-4.5">
+                                            The issued RFID card must be used for all future campus entries. Users are required to tap their RFID card 
+                                            at designated scanners when entering and exiting the premises.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg text-slate-800 mb-2 flex items-center gap-3">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span> Card Responsibility
+                                        </h3>
+                                        <p class="text-slate-500 leading-relaxed font-light pl-4.5">
+                                            RFID cards are non-transferable and must be kept secure at all times. Lost or damaged cards must be reported 
+                                            immediately to the administration office for replacement.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="policy-pane-parking" class="policy-pane hidden">
+                                <div class="flex items-center gap-4 mb-10">
+                                    <div class="w-16 h-16 rounded-2xl bg-brand-orange/10 text-brand-orange flex items-center justify-center">
+                                        <i data-lucide="car" class="w-8 h-8"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="font-display font-bold text-3xl text-slate-900 leading-none">Parking Regulations</h2>
+                                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-3 block">Traffic Division: PK-04</span>
+                                    </div>
+                                </div>
+                                <div class="space-y-8">
+                                    <div>
+                                        <h3 class="font-bold text-lg text-slate-800 mb-2 flex items-center gap-3">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span> Authorized Parking
+                                        </h3>
+                                        <p class="text-slate-500 leading-relaxed font-light pl-4.5">
+                                            Parking is only allowed in designated areas assigned for visitors, students, and staff. Always follow campus signage and security instructions.
+                                        </p>
+                                    </div>
+                                    <!--<div>
+                                        <h3 class="font-bold text-lg text-slate-800 mb-2 flex items-center gap-3">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-orange"></span> RFID Vehicle Monitoring
+                                        </h3>
+                                        <p class="text-slate-500 leading-relaxed font-light pl-4.5">
+                                            Vehicles may be monitored through the EntryX RFID system for security purposes. Ensure your entry is properly logged upon arrival.
+                                        </p>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <div id="policy-pane-conduct" class="policy-pane hidden">
+                                <div class="flex items-center gap-4 mb-10">
+                                    <div class="w-16 h-16 rounded-2xl bg-brand-slate/10 text-brand-slate flex items-center justify-center">
+                                        <i data-lucide="shield-alert" class="w-8 h-8"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="font-display font-bold text-3xl text-slate-900 leading-none">Code of Conduct</h2>
+                                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-3 block">Institutional Ethics: CD-09</span>
+                                    </div>
+                                </div>
+                                <div class="space-y-8">
+                                    <div>
+                                        <h3 class="font-bold text-lg text-slate-800 mb-2 flex items-center gap-3">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-slate"></span> Respect and Discipline
+                                        </h3>
+                                        <p class="text-slate-500 leading-relaxed font-light pl-4.5">
+                                            All individuals must observe proper behavior, respect university personnel, and maintain a professional environment at all times.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg text-slate-800 mb-2 flex items-center gap-3">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-slate"></span> Prohibited Actions
+                                        </h3>
+                                        <p class="text-slate-500 leading-relaxed font-light pl-4.5">
+                                            Any form of misconduct, including unauthorized access, misuse of RFID cards, or disruptive behavior, will result in penalties or restricted access.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="policy-pane-safety" class="policy-pane hidden">
+                                <div class="flex items-center gap-4 mb-10">
+                                    <div class="w-16 h-16 rounded-2xl bg-brand-green/10 text-brand-green flex items-center justify-center">
+                                        <i data-lucide="stethoscope" class="w-8 h-8"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="font-display font-bold text-3xl text-slate-900 leading-none">Emergency & Safety</h2>
+                                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-3 block">Health Center: SF-12</span>
+                                    </div>
+                                </div>
+                                <div class="space-y-8">
+                                    <div>
+                                        <h3 class="font-bold text-lg text-slate-800 mb-2 flex items-center gap-3">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span> Emergency Response
+                                        </h3>
+                                        <p class="text-slate-500 leading-relaxed font-light pl-4.5">
+                                            In case of emergency, immediately notify campus security or proceed to the nearest help station for assistance.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg text-slate-800 mb-2 flex items-center gap-3">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span> Security Monitoring
+                                        </h3>
+                                        <p class="text-slate-500 leading-relaxed font-light pl-4.5">
+                                            The EntryX system continuously monitors campus entry and exit logs through RFID technology to ensure safety and accountability.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-16 pt-8 border-t border-slate-50 bg-slate-50/50 -mx-8 md:-mx-14 -mb-8 md:-mb-14 px-8 md:px-14 py-8 rounded-b-5xl">
+                                <div class="flex items-start gap-4">
+                                    <i data-lucide="alert-circle" class="w-5 h-5 text-brand-orange shrink-0"></i>
+                                    <p class="text-sm text-slate-500 leading-relaxed italic">
+                                        By entering the campus using the EntryX system, you agree to follow all university policies and security protocols. 
+                                        Violations may result in suspension of access privileges.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+<footer class="bg-slate-900 text-white pt-24 pb-12 border-t border-slate-800">
+    <div class="container mx-auto px-2 sm:px-4 lg:px-8">
+
+        <!-- GRID -->
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16 text-center md:text-left">
+
+            <!-- TEXT -->
+            <div class="col-span-1">
+                <a href="../../index.html" class="flex justify-center md:justify-start items-center space-x-1 mb-6">
+                    <img src="../image/title.png" alt="UNP Logo" class="w-28 sm:w-40 md:w-32 h-auto">
+                </a>
+                <p class="text-slate-400 leading-relaxed font-light mb-6 text-sm">
+                    UNP Visitors RFID Entry System helps monitor campus visitors, track entry and exit activity, and improve campus security.
+                </p>
+            </div>
+
+            <!-- EXPLORE -->
+            <div class="col-span-1">
+                <h3 class="font-display font-bold text-lg mb-6">Explore</h3>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="../../index.html" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="./about.html" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="./map.html" class="hover:text-white transition-colors">Map</a></li>
+                    <li><a href="./policy.html" class="hover:text-white transition-colors">Policy</a></li>
+                    <li><a href="./help.html" class="hover:text-white transition-colors">Help Center</a></li>
+                    <li><a href="./contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="col-span-1">
+                <h3 class="font-display font-bold text-lg mb-6 text-brand-blue">Contact</h3>
+                <ul class="space-y-4 text-sm text-slate-400">
+                    <li class="flex items-start justify-center md:justify-start space-x-3">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-brand-green shrink-0 mt-0.5"></i>
+                        <span>UNP, Tamag Vigan City, Ilocos Sur</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start space-x-3">
+                        <i data-lucide="mail" class="w-5 h-5 text-brand-green shrink-0"></i>
+                        <a href="mailto:admissionservices@unp.edu.ph" class="hover:text-white transition-colors">
+                            admissionservices@unp.edu.ph
+                        </a>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start space-x-3">
+                        <i data-lucide="phone" class="w-5 h-5 text-brand-green shrink-0"></i>
+                        <div class="flex flex-col">
+                            <a href="tel:+639175156779" class="hover:text-white transition-colors">+63 917 515 6779</a>
+                            <a href="tel:+639466419503" class="hover:text-white transition-colors">+63 946 641 9503</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CAMPUS HOURS -->
+            <div class="col-span-1">
+                <h3 class="font-display font-bold text-lg mb-6 text-brand-orange">Campus Hours</h3>
+                <ul class="space-y-3 text-sm text-slate-400 mb-8">
+                    <li class="flex flex-col">
+                        <span class="font-bold text-slate-300">Monday – Friday</span>
+                        <span>7:00 AM – 8:00 PM</span>
+                    </li>
+                    <li class="flex flex-col">
+                        <span class="font-bold text-slate-300">Saturday</span>
+                        <span>9:00 AM – 5:00 PM</span>
+                    </li>
+                    <li class="flex flex-col">
+                        <span class="font-bold text-slate-300">Sunday</span>
+                        <span>10:00 AM – 4:00 PM</span>
+                    </li>
+                    <li class="flex flex-col">
+                        <span class="font-bold text-slate-300">
+                            Public Holidays <span class="text-red-500 ml-1">Closed</span>
+                        </span>
+                    </li>
+                </ul>
+
+                <div class="bg-red-500/10 border border-red-500/20 rounded-2xl p-5 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="alert-triangle" class="w-12 h-12"></i>
+                    </div>
+                    <p class="text-red-500 font-bold text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Emergency
+                    </p>
+                    <a href="tel:+000000CAMP"
+                    class="text-sm md:text-base font-display font-semibold text-white hover:text-red-400 transition-colors">
+                        +1 (000) 000-CAMP
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-slate-500 text-sm text-center md:text-left">
+            <p>&copy; 2026 EntryX UNP Visitors Entry System. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="./policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="./terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="./help.html" class="hover:text-white transition-colors">Help Center</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="../script/main.js"></script>
+</body>
+</html>

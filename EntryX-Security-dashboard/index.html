@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EntryX | Security Management System</title>
+
+    <!-- Dependencies -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="src/style/style.css" />
+  </head>
+
+  <body class="app-body">
+    <div class="flex h-screen overflow-hidden">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="gradient-brand icon-box">
+            <i data-lucide="shield"></i>
+          </div>
+          <div>
+            <h1 class="logo-title">EntryX</h1>
+            <p class="logo-sub">Security Operation</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul class="space-y-1">
+            <li>
+              <a href="index.html" class="nav-item nav-item-active">
+                <i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="src/page/visitors.html" class="nav-item nav-item-inactive">
+                <i data-lucide="users"></i>
+                <span>Visitors</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="logs.html" class="nav-item nav-item-inactive">
+                <i data-lucide="history"></i>
+                <span>Access Logs</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <!-- Logout Button -->
+            <button onclick="handleLogout()" class="logout-btn">
+                <i data-lucide="log-out"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="flex-1 flex flex-col overflow-hidden">
+        <!-- HEADER -->
+        <header class="header">
+          <div class="search-wrapper">
+            <i data-lucide="search" class="search-icon"></i>
+            <input
+              type="text"
+              placeholder="Search visitors, logs, alerts..."
+              class="search-input"
+            />
+          </div>
+
+          <div class="datetime">
+            <p id="date-display"></p>
+            <p id="time-display"></p>
+          </div>
+        </header>
+
+        <!-- CONTENT -->
+        <div class="content custom-scrollbar">
+          <div id="view-dashboard" class="space-y-8 animate-view">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="card">
+                <div class="card-icon bg-blue">
+                  <i data-lucide="users"></i>
+                </div>
+                <p class="card-label">Total Visitors</p>
+                <h3 id="stat-active" class="card-value">0</h3>
+              </div>
+
+              <div class="card">
+                <div class="card-icon bg-indigo">
+                  <i data-lucide="users"></i>
+                </div>
+                <p class="card-label">Total Entry Today</p>
+                <h3 id="stat-entries" class="card-value">0</h3>
+              </div>
+
+              <div class="card">
+                <div class="card-icon bg-red">
+                  <i data-lucide="users"></i>
+                </div>
+                <p class="card-label">Total Exit Today</p>
+                <h3 id="stat-alerts" class="card-value">0</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        lucide.createIcons();
+      });
+    </script>
+
+    <script src="src/script/script.js"></script>
+  </body>
+</html>

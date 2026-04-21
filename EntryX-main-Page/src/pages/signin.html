@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EntryX | Institutional Sign In</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-brand-gray text-slate-900 font-sans min-h-screen flex flex-col">
+    <nav id="navbar" class="fixed top-0 w-full z-50 py-1 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <a href="../../index.html" class="flex items-center space-x-3">
+                     <img src="../image/title.png" alt="UNP Logo" class="hidden min-[770px]:block w-150px sm:w-16 md:w-20 h-auto">
+                </a>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="../../index.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="home" class="w-4 h-4"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="./about.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="info" class="w-4 h-4"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="./map.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i>
+                        <span>Map</span>
+                    </a>
+                    <a href="./policy.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        <span>Policy</span>
+                    </a>
+                    <a href="./contact.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="phone-call" class="w-4 h-4"></i>
+                        <span>Contact</span>
+                    </a>
+                    <a href="./help.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="help-circle" class="w-4 h-4"></i>
+                        <span>Help</span>
+                    </a>
+                    <div class="w-px h-6 bg-slate-200 mx-2"></div>
+                    <a href="./signin.html" class="flex items-center space-x-2 px-5 py-2.5 bg-slate-900 text-white rounded-full text-sm font-bold hover:bg-slate-800 transition-all shadow-md">
+                        <i data-lucide="log-in" class="w-4 h-4"></i>
+                        <span>Sign In</span>
+                    </a>
+                </div>
+                <button id="mobile-toggle" class="md:hidden p-2 rounded-xl text-slate-600 hover:bg-slate-100">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" 
+        class="fixed top-0 left-0 w-full z-[60] bg-slate-100 
+                -translate-y-full transition-transform duration-300 
+                max-h-[70vh] overflow-y-auto rounded-b-2xl shadow-lg hidden">
+
+        <!-- Header -->
+        <div class="p-4 flex justify-between items-center border-b border-slate-200">
+            <span class="font-semibold text-lg text-slate-700">Menu</span>
+            <button id="mobile-close" class="p-2 rounded-lg text-slate-500 hover:bg-slate-200">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <!-- Menu Items -->
+        <div class="px-3 py-2 space-y-1">
+
+            <a href="../../index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-100 text-blue-600 font-medium">
+                <i data-lucide="home" class="w-5 h-5"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="./about.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-200 transition">
+                <i data-lucide="info" class="w-5 h-5"></i>
+                <span>About</span>
+            </a>
+
+            <a href="./map.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-200 transition">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                <span>Map</span>
+            </a>
+
+            <a href="./policy.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-200 transition">
+                <i data-lucide="file-text" class="w-5 h-5"></i>
+                <span>Policy</span>
+            </a>
+
+            <a href="./contact.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-200 transition">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+                <span>Contact</span>
+            </a>
+
+            <a href="./help.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-200 transition">
+                <i data-lucide="help-circle" class="w-5 h-5"></i>
+                <span>Help</span>
+            </a>
+
+        </div>
+    </div>
+
+    <div class="flex-grow flex items-center justify-center p-4 py-12">
+        <div class="max-w-md w-full reveal active">
+            <div class="bg-white rounded-5xl shadow-2xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
+                <div class="p-8 md:p-12">
+                    <div class="flex flex-col items-center mb-10">
+                        <div class="mb-6 flex justify-center">
+                            <img src="../image/title.png" alt="UNP Logo" class="w-32 sm:w-40 md:w-48 h-auto transition-transform hover:scale-110">
+                        </div>
+                        <h1 class="font-display font-bold text-3xl text-slate-900 text-center tracking-tight">Welcome Back</h1>
+                        <p class="text-slate-500 text-sm mt-2">Sign in to your EntryX visitor account</p>
+                    </div>
+
+                    <form id="signin-form" class="space-y-5">
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] ml-2">Email Address</label>
+                            <div class="relative group">
+                                <i data-lucide="mail" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-300 group-focus-within:text-brand-blue transition-colors"></i>
+                                <input 
+                                    type="email" 
+                                    required 
+                                    placeholder="name@email.com"
+                                    class="w-full pl-12 pr-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:ring-4 focus:ring-brand-blue/10 focus:border-brand-blue/30 outline-none transition-all font-medium text-slate-700"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center px-2">
+                                <label class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Password</label>
+                                <a href="#" class="text-[10px] font-bold text-brand-blue hover:text-brand-blue/80 uppercase tracking-widest">Forgot?</a>
+                            </div>
+                            <div class="relative group">
+                                <i data-lucide="lock" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-300 group-focus-within:text-brand-blue transition-colors"></i>
+                                <input 
+                                    type="password" 
+                                    id="password-input"
+                                    required 
+                                    placeholder="••••••••"
+                                    class="w-full pl-12 pr-12 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:bg-white focus:ring-4 focus:ring-brand-blue/10 focus:border-brand-blue/30 outline-none transition-all font-medium text-slate-700"
+                                >
+                                <button type="button" id="toggle-password" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-300 hover:text-slate-600 transition-colors">
+                                    <i data-lucide="eye" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button 
+                            type="submit" 
+                            class="w-full py-5 bg-brand-blue hover:bg-brand-blue/90 text-white rounded-2xl font-bold flex items-center justify-center gap-3 transition-all shadow-xl shadow-brand-blue/10 hover:shadow-brand-blue/20 hover:-translate-y-0.5"
+                        >
+                            <span>Sign In</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                    </form>
+
+                    <div class="relative my-10">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-slate-100"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-8 bg-slate-50 border-t border-slate-100 text-center">
+                    <p class="text-slate-500 text-sm">
+                        Access issue? <a href="./contact.html" class="text-brand-blue font-bold hover:underline">Request Support</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-8 flex justify-center gap-6 text-slate-400 text-[10px] font-bold uppercase tracking-widest">
+                <a href="./policy.html" class="hover:text-slate-600">Privacy</a>
+                <a href="./policy.html" class="hover:text-slate-600">Terms</a>
+                <a href="./help.html" class="hover:text-slate-600">Help</a>
+            </div>
+        </div>
+    </div>  
+
+
+<footer class="bg-slate-900 text-white pt-24 pb-12 border-t border-slate-800">
+    <div class="container mx-auto px-2 sm:px-4 lg:px-8">
+
+        <!-- GRID -->
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16 text-center md:text-left">
+
+            <!-- TEXT -->
+            <div class="col-span-1">
+                <a href="../../index.html" class="flex justify-center md:justify-start items-center space-x-1 mb-6">
+                    <img src="../image/title.png" alt="UNP Logo" class="w-28 sm:w-40 md:w-32 h-auto">
+                </a>
+                <p class="text-slate-400 leading-relaxed font-light mb-6 text-sm">
+                    UNP Visitors RFID Entry System helps monitor campus visitors, track entry and exit activity, and improve campus security.
+                </p>
+            </div>
+
+            <!-- EXPLORE -->
+            <div class="col-span-1">
+                <h3 class="font-display font-bold text-lg mb-6">Explore</h3>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="../../index.html" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="./about.html" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="./map.html" class="hover:text-white transition-colors">Map</a></li>
+                    <li><a href="./policy.html" class="hover:text-white transition-colors">Policy</a></li>
+                    <li><a href="./help.html" class="hover:text-white transition-colors">Help Center</a></li>
+                    <li><a href="./contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="col-span-1">
+                <h3 class="font-display font-bold text-lg mb-6 text-brand-blue">Contact</h3>
+                <ul class="space-y-4 text-sm text-slate-400">
+                    <li class="flex items-start justify-center md:justify-start space-x-3">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-brand-green shrink-0 mt-0.5"></i>
+                        <span>UNP, Tamag Vigan City, Ilocos Sur</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start space-x-3">
+                        <i data-lucide="mail" class="w-5 h-5 text-brand-green shrink-0"></i>
+                        <a href="mailto:admissionservices@unp.edu.ph" class="hover:text-white transition-colors">
+                            admissionservices@unp.edu.ph
+                        </a>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start space-x-3">
+                        <i data-lucide="phone" class="w-5 h-5 text-brand-green shrink-0"></i>
+                        <div class="flex flex-col">
+                            <a href="tel:+639175156779" class="hover:text-white transition-colors">+63 917 515 6779</a>
+                            <a href="tel:+639466419503" class="hover:text-white transition-colors">+63 946 641 9503</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CAMPUS HOURS -->
+            <div class="col-span-1">
+                <h3 class="font-display font-bold text-lg mb-6 text-brand-orange">Campus Hours</h3>
+                <ul class="space-y-3 text-sm text-slate-400 mb-8">
+                    <li class="flex flex-col">
+                        <span class="font-bold text-slate-300">Monday – Friday</span>
+                        <span>7:00 AM – 8:00 PM</span>
+                    </li>
+                    <li class="flex flex-col">
+                        <span class="font-bold text-slate-300">Saturday</span>
+                        <span>9:00 AM – 5:00 PM</span>
+                    </li>
+                    <li class="flex flex-col">
+                        <span class="font-bold text-slate-300">Sunday</span>
+                        <span>10:00 AM – 4:00 PM</span>
+                    </li>
+                    <li class="flex flex-col">
+                        <span class="font-bold text-slate-300">
+                            Public Holidays <span class="text-red-500 ml-1">Closed</span>
+                        </span>
+                    </li>
+                </ul>
+
+                <div class="bg-red-500/10 border border-red-500/20 rounded-2xl p-5 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="alert-triangle" class="w-12 h-12"></i>
+                    </div>
+                    <p class="text-red-500 font-bold text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Emergency
+                    </p>
+                    <a href="tel:+000000CAMP"
+                    class="text-sm md:text-base font-display font-semibold text-white hover:text-red-400 transition-colors">
+                        +1 (000) 000-CAMP
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-slate-500 text-sm text-center md:text-left">
+            <p>&copy; 2026 EntryX UNP Visitors Entry System. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="./policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="./terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="./help.html" class="hover:text-white transition-colors">Help Center</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="../script/main.js"></script>
+</body>
+</html>

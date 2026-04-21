@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EntryX | About UNP Heritage</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-slate-900 font-sans">
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <a href="../../index.html" class="flex items-center space-x-3">
+                    <img src="../image/title.png" alt="UNP Logo" class="hidden min-[770px]:block w-150px sm:w-16 md:w-20 h-auto">
+                </a>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="../../index.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="home" class="w-4 h-4"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="./about.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="info" class="w-4 h-4"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="./map.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i>
+                        <span>Map</span>
+                    </a>
+                    <a href="./policy.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                        <span>Policy</span>
+                    </a>
+                    <a href="./contact.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="phone-call" class="w-4 h-4"></i>
+                        <span>Contact</span>
+                    </a>
+                    <a href="./help.html" class="nav-link px-4 py-2 rounded-full text-sm font-semibold text-slate-600 hover:bg-slate-100 flex items-center gap-2">
+                        <i data-lucide="help-circle" class="w-4 h-4"></i>
+                        <span>Help</span>
+                    </a>
+                    <div class="w-px h-6 bg-slate-200 mx-2"></div>
+                    <a href="./signin.html" class="flex items-center space-x-2 px-5 py-2.5 bg-slate-900 text-white rounded-full text-sm font-bold hover:bg-slate-800 transition-all shadow-md">
+                        <i data-lucide="log-in" class="w-4 h-4"></i>
+                        <span>Sign In</span>
+                    </a>
+                </div>
+                <button id="mobile-toggle" class="md:hidden p-2 rounded-xl text-slate-600 hover:bg-slate-100">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" 
+        class="fixed top-0 left-0 w-full z-[60] bg-slate-100 
+                -translate-y-full transition-transform duration-300 
+                max-h-[70vh] overflow-y-auto rounded-b-2xl shadow-lg hidden">
+
+        <!-- Header -->
+        <div class="p-4 flex justify-between items-center border-b border-slate-200">
+            <span class="font-semibold text-lg text-slate-700">Menu</span>
+            <button id="mobile-close" class="p-2 rounded-lg text-slate-500 hover:bg-slate-200">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="px-3 py-2 space-y-1">
+
+            <a href="../../index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-200 transition">
+                <i data-lucide="home" class="w-5 h-5"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="./about.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-100 text-blue-600 font-medium">
+                <i data-lucide="info" class="w-5 h-5"></i>
+                <span>About</span>
+            </a>
+
+            <a href="./map.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-200 transition">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                <span>Map</span>
+            </a>
+
+            <a href="./policy.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-200 transition">
+                <i data-lucide="file-text" class="w-5 h-5"></i>
+                <span>Policy</span>
+            </a>
+
+            <a href="./contact.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-200 transition">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+                <span>Contact</span>
+            </a>
+
+            <a href="./help.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-200 transition">
+                <i data-lucide="help-circle" class="w-5 h-5"></i>
+                <span>Help</span>
+            </a>
+        </div>
+    </div>
+    <!-- About Hero Section -->
+    <section class="relative pt-40 pb-24 bg-slate-900 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="../image/campus.jpg" alt="UNP Heritage" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-transparent to-slate-900"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl stagger-1">
+                <span class="inline-block px-4 py-1 rounded-full bg-brand-blue/20 text-brand-blue text-xs font-bold uppercase tracking-widest mb-6 border border-brand-blue/30">Heritage of Excellence</span>
+                <h1 class="font-display font-bold text-6xl md:text-8xl text-white mb-8 tracking-tighter leading-[0.85]">
+                    University of Northern <br> <span class="text-brand-green italic font-black">Philippines.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-400 font-light max-w-2xl leading-relaxed">
+                    The first and oldest state university in Northern Luzon, standing as a beacon of academic mastery in the heart of Vigan City.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Stats -->
+    <div class="container mx-auto px-4 -mt-16 relative z-20 reveal">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-slate-200/50 flex flex-col items-center text-center group hover:border-brand-blue/30 transition-all">
+                <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-500 flex items-center justify-center mb-4 group-hover:text-blue-600 transition-colors">
+                    <i data-lucide="clock"></i>
+                </div>
+                <div class="text-4xl font-display font-bold text-slate-900 mb-1">1906</div>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Founded</div>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-slate-200/50 flex flex-col items-center text-center group hover:border-brand-blue/30 transition-all">
+                <div class="w-12 h-12 rounded-xl bg-green-100 text-green-500 flex items-center justify-center mb-4 group-hover:text-green-600 transition-colors">
+                    <i data-lucide="users"></i>
+                </div>
+                <div class="text-4xl font-display font-bold text-slate-900 mb-1">15K+</div>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Students</div>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-slate-200/50 flex flex-col items-center text-center group hover:border-brand-blue/30 transition-all">
+                <div class="w-12 h-12 rounded-xl bg-yellow-100 text-yellow-500 flex items-center justify-center mb-4 group-hover:text-yellow-600 transition-colors">
+                    <i data-lucide="award"></i>
+                </div>
+                <div class="text-4xl font-display font-bold text-slate-900 mb-1">60+</div>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Programs</div>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-slate-200/50 flex flex-col items-center text-center group hover:border-brand-blue/30 transition-all">
+               <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-500 flex items-center justify-center mb-4 group-hover:text-purple-600 transition-colors">
+                    <i data-lucide="globe"></i>
+                </div>
+                <div class="text-4xl font-display font-bold text-slate-900 mb-1">118</div>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Heritage Years</div>
+            </div>
+
+        </div>
+    </div>
+     <section class="py-32 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div class="reveal">
+                    <h1 class="font-display text-5xl font-bold text-slate-900 mb-4">About Us</h1>
+                    <h2 class="font-display text-2xl text-slate-800 mb-8 tracking-tight">This page is under construction. <br><span>Check back soon for more information.</span> </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--
+
+    <section class="py-32 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div class="reveal">
+                    <h2 class="font-display font-bold text-4xl text-slate-900 mb-8 tracking-tight">Our Identity.</h2>
+                    <div class="space-y-12">
+                        <div class="flex gap-8 group">
+                            <div class="shrink-0 w-16 h-16 rounded-3xl bg-brand-blue/5 flex items-center justify-center text-brand-blue border border-brand-blue/10 group-hover:bg-brand-blue group-hover:text-white transition-all duration-500">
+                                <i data-lucide="globe" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl text-slate-900 mb-3">Vision</h3>
+                                <p class="text-slate-500 text-lg leading-relaxed font-light italic">"A globally recognized university in a heritage city at the heart of the Ilocandia."</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-8 group">
+                            <div class="shrink-0 w-16 h-16 rounded-3xl bg-brand-green/5 flex items-center justify-center text-brand-green border border-brand-green/10 group-hover:bg-brand-green group-hover:text-white transition-all duration-500">
+                                <i data-lucide="target" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl text-slate-900 mb-3">Mission</h3>
+                                <p class="text-slate-500 leading-relaxed font-light">
+                                    To offer relevant programs in arts, sciences, pedagogy, health, business, and technology; to promote excellence in instruction, research, and production.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative reveal">
+                    <div class="aspect-square rounded-5xl overflow-hidden bg-slate-100 border-8 border-white shadow-2xl relative">
+                        <img src="../image/old-campus.png" alt="UNP Campus" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-brand-blue/20 mix-blend-multiply"></div>
+                        <div class="absolute bottom-12 left-12 right-12 bg-white/90 backdrop-blur p-8 rounded-3xl border border-white/50">
+                            <p class="text-slate-900 font-display font-bold text-2xl mb-2 italic">Human-Centered Development.</p>
+                            <p class="text-sm text-slate-500 uppercase tracking-widest font-bold">University Philosophy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-32 bg-brand-gray border-y border-slate-100">
+        <div class="container mx-auto px-2">
+            <div class="text-center mb-24 reveal">
+                <h2 class="font-display font-bold text-4xl text-slate-900 mb-4 tracking-tight">Core Values.</h2>
+                <p class="text-slate-500 text-lg uppercase tracking-[0.3em] font-bold">The T.E.A.M.I.S Standard</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-5xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group reveal">
+                    <div class="text-5xl font-display font-black mb-6 opacity-10 group-hover:opacity-100 transition-opacity text-brand-blue">T</div>
+                    <h3 class="font-bold text-2xl text-slate-900 mb-3">Teamwork</h3>
+                    <p class="text-slate-500 leading-relaxed font-light">Collaborating across disciplines to achieve shared institutional goals.</p>
+                </div>
+                <div class="bg-white p-10 rounded-5xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group reveal">
+                    <div class="text-5xl font-display font-black mb-6 opacity-10 group-hover:opacity-100 transition-opacity text-brand-green">E</div>
+                    <h3 class="font-bold text-2xl text-slate-900 mb-3">Excellence</h3>
+                    <p class="text-slate-500 leading-relaxed font-light">Striving for the highest standards in instruction, research, and service.</p>
+                </div>
+                <div class="bg-white p-10 rounded-5xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group reveal">
+                    <div class="text-5xl font-display font-black mb-6 opacity-10 group-hover:opacity-100 transition-opacity text-brand-orange">A</div>
+                    <h3 class="font-bold text-2xl text-slate-900 mb-3">Accountability</h3>
+                    <p class="text-slate-500 leading-relaxed font-light">Taking responsibility for our actions and being transparent in our processes.</p>
+                </div>
+                <div class="bg-white p-10 rounded-5xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group reveal">
+                    <div class="text-5xl font-display font-black mb-6 opacity-10 group-hover:opacity-100 transition-opacity text-slate-900">M</div>
+                    <h3 class="font-bold text-2xl text-slate-900 mb-3">Meritocracy</h3>
+                    <p class="text-slate-500 leading-relaxed font-light">Upholding fairness and rewarding performance based on actual achievement.</p>
+                </div>
+                <div class="bg-white p-10 rounded-5xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group reveal">
+                    <div class="text-5xl font-display font-black mb-6 opacity-10 group-hover:opacity-100 transition-opacity text-brand-blue">I</div>
+                    <h3 class="font-bold text-2xl text-slate-900 mb-3">Integrity</h3>
+                    <p class="text-slate-500 leading-relaxed font-light">Maintaining moral uprightness and honesty in all professional dealings.</p>
+                </div>
+                <div class="bg-white p-10 rounded-5xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group reveal">
+                    <div class="text-5xl font-display font-black mb-6 opacity-10 group-hover:opacity-100 transition-opacity text-brand-green">S</div>
+                    <h3 class="font-bold text-2xl text-slate-900 mb-3">Service</h3>
+                    <p class="text-slate-500 leading-relaxed font-light">Committing to the socio-economic development of Ilocos Sur and the nation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-32 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-display font-bold text-4xl text-slate-900 mb-16 tracking-tight text-center italic reveal">
+                A Century of Transformation.
+            </h2>
+
+            <div class="space-y-16 relative before:absolute before:left-8 before:top-0 before:bottom-0 before:w-px before:bg-slate-100">
+                
+
+                <div class="relative pl-24 group reveal">
+                    <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-white border border-slate-100 shadow-lg flex items-center justify-center z-10 group-hover:border-brand-blue group-hover:scale-110 transition-all duration-500">
+                        <span class="font-display font-bold text-slate-400 group-hover:text-brand-blue">1</span>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 rounded bg-slate-900 text-white text-xs font-bold mb-3">1906</span>
+                        <h4 class="text-2xl font-bold text-slate-900 mb-2">The Foundation</h4>
+                        <p class="text-slate-500 text-lg font-light leading-relaxed">
+                            Established as Vigan High School, beginning the journey of public education in the region.
+                        </p>
+                    </div>
+                </div>
+
+ 
+                <div class="relative pl-24 group reveal">
+                    <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-white border border-slate-100 shadow-lg flex items-center justify-center z-10 group-hover:border-brand-blue group-hover:scale-110 transition-all duration-500">
+                        <span class="font-display font-bold text-slate-400 group-hover:text-brand-blue">2</span>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 rounded bg-slate-900 text-white text-xs font-bold mb-3">1910</span>
+                        <h4 class="text-2xl font-bold text-slate-900 mb-2">Technical Integration</h4>
+                        <p class="text-slate-500 text-lg font-light leading-relaxed">
+                            Transitioned into Vigan Trade School, focusing on industrial and manual arts.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="relative pl-24 group reveal">
+                    <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-white border border-slate-100 shadow-lg flex items-center justify-center z-10 group-hover:border-brand-blue group-hover:scale-110 transition-all duration-500">
+                        <span class="font-display font-bold text-slate-400 group-hover:text-brand-blue">3</span>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 rounded bg-slate-900 text-white text-xs font-bold mb-3">1951</span>
+                        <h4 class="text-2xl font-bold text-slate-900 mb-2">Arts & Trades</h4>
+                        <p class="text-slate-500 text-lg font-light leading-relaxed">
+                            Recognized as the Northern Luzon School of Arts and Trades, expanding its academic reach.
+                        </p>
+                    </div>
+                </div>
+
+  
+                <div class="relative pl-24 group reveal">
+                    <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-white border border-slate-100 shadow-lg flex items-center justify-center z-10 group-hover:border-brand-blue group-hover:scale-110 transition-all duration-500">
+                        <span class="font-display font-bold text-slate-400 group-hover:text-brand-blue">4</span>
+                    </div>
+                    <div>
+                        <span class="inline-block px-3 py-1 rounded bg-slate-900 text-white text-xs font-bold mb-3">1965</span>
+                        <h4 class="text-2xl font-bold text-slate-900 mb-2">University Status</h4>
+                        <p class="text-slate-500 text-lg font-light leading-relaxed">
+                            Enacted by Republic Act 4449, officially becoming the University of Northern Philippines.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="container mx-auto px-4 pb-24 reveal">
+        <div class="bg-brand-blue rounded-5xl p-16 md:p-24 text-center text-white relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <i data-lucide="school" class="w-full h-full scale-150 rotate-12"></i>
+            </div>
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <h2 class="font-display font-bold text-4xl md:text-6xl mb-8 leading-tight">Empowering Generations of Leaders.</h2>
+                <p class="text-xl text-white/80 mb-12 font-light">Join us as we continue to shape the future through excellence in education and research.</p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="./signin.html" class="px-10 py-5 bg-white text-brand-blue font-bold rounded-2xl hover:bg-slate-100 transition-colors">Portal Access</a>
+                    <a href="./contact.html" class="px-10 py-5 bg-brand-blue/20 border border-white/20 text-white font-bold rounded-2xl hover:bg-white/10 transition-colors">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+        <!-- Footer -->
+        <footer class="bg-slate-900 text-white pt-24 pb-12 border-t border-slate-800">
+            <div class="container mx-auto px-2 sm:px-4 lg:px-8">
+
+                <!-- GRID -->
+                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16 text-center md:text-left">
+
+                    <!-- TEXT -->
+                    <div class="col-span-1">
+                        <a href="../../index.html" class="flex justify-center md:justify-start items-center space-x-1 mb-6">
+                            <img src="../image/title.png" alt="UNP Logo" class="w-28 sm:w-40 md:w-32 h-auto">
+                        </a>
+                        <p class="text-slate-400 leading-relaxed font-light mb-6 text-sm">
+                            UNP Visitors RFID Entry System helps monitor campus visitors, track entry and exit activity, and improve campus security.
+                        </p>
+                    </div>
+
+                    <!-- EXPLORE -->
+                    <div class="col-span-1">
+                        <h3 class="font-display font-bold text-lg mb-6">Explore</h3>
+                        <ul class="space-y-3 text-sm text-slate-400">
+                            <li><a href="../../index.html" class="hover:text-white transition-colors">Home</a></li>
+                            <li><a href="./about.html" class="hover:text-white transition-colors">About</a></li>
+                            <li><a href="./map.html" class="hover:text-white transition-colors">Map</a></li>
+                            <li><a href="./policy.html" class="hover:text-white transition-colors">Policy</a></li>
+                            <li><a href="./help.html" class="hover:text-white transition-colors">Help Center</a></li>
+                            <li><a href="./contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- CONTACT -->
+                    <div class="col-span-1">
+                        <h3 class="font-display font-bold text-lg mb-6 text-brand-blue">Contact</h3>
+                        <ul class="space-y-4 text-sm text-slate-400">
+                            <li class="flex items-start justify-center md:justify-start space-x-3">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-brand-green shrink-0 mt-0.5"></i>
+                                <span>UNP, Tamag Vigan City, Ilocos Sur</span>
+                            </li>
+                            <li class="flex items-center justify-center md:justify-start space-x-3">
+                                <i data-lucide="mail" class="w-5 h-5 text-brand-green shrink-0"></i>
+                                <a href="mailto:admissionservices@unp.edu.ph" class="hover:text-white transition-colors">
+                                    admissionservices@unp.edu.ph
+                                </a>
+                            </li>
+                            <li class="flex items-center justify-center md:justify-start space-x-3">
+                                <i data-lucide="phone" class="w-5 h-5 text-brand-green shrink-0"></i>
+                                <div class="flex flex-col">
+                                    <a href="tel:+639175156779" class="hover:text-white transition-colors">+63 917 515 6779</a>
+                                    <a href="tel:+639466419503" class="hover:text-white transition-colors">+63 946 641 9503</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- CAMPUS HOURS -->
+                    <div class="col-span-1">
+                        <h3 class="font-display font-bold text-lg mb-6 text-brand-orange">Campus Hours</h3>
+                        <ul class="space-y-3 text-sm text-slate-400 mb-8">
+                            <li class="flex flex-col">
+                                <span class="font-bold text-slate-300">Monday – Friday</span>
+                                <span>7:00 AM – 8:00 PM</span>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="font-bold text-slate-300">Saturday</span>
+                                <span>9:00 AM – 5:00 PM</span>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="font-bold text-slate-300">Sunday</span>
+                                <span>10:00 AM – 4:00 PM</span>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="font-bold text-slate-300">
+                                    Public Holidays <span class="text-red-500 ml-1">Closed</span>
+                                </span>
+                            </li>
+                        </ul>
+
+                        <div class="bg-red-500/10 border border-red-500/20 rounded-2xl p-5 relative overflow-hidden group">
+                            <div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
+                                <i data-lucide="alert-triangle" class="w-12 h-12"></i>
+                            </div>
+                            <p class="text-red-500 font-bold text-xs uppercase tracking-widest mb-2 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Emergency
+                            </p>
+                            <a href="tel:+000000CAMP"
+                            class="text-sm md:text-base font-display font-semibold text-white hover:text-red-400 transition-colors">
+                                +1 (000) 000-CAMP
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- BOTTOM -->
+                <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-slate-500 text-sm text-center md:text-left">
+                    <p>&copy; 2026 EntryX UNP Visitors Entry System. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="./policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="./terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+                        <a href="./help.html" class="hover:text-white transition-colors">Help Center</a>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+    <script>
+        lucide.createIcons();
+
+    </script>
+    <script src="../script/main.js"></script>
+</body>
+</html>

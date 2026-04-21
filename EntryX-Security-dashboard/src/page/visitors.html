@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EntryX | Visitors</title>
+
+    <!-- Dependencies -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.js"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/toascontainer.css">
+    <link rel="stylesheet" href="../style/top-popUp.css">
+</head>
+
+<body class="app-body">
+<div class="flex h-screen overflow-hidden">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="gradient-brand icon-box">
+                <i data-lucide="shield"></i>
+            </div>
+            <div>
+                <h1 class="logo-title">EntryX</h1>
+                <p class="logo-sub">Security Operation</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul class="space-y-1">
+                <li>
+                    <a href="../../index.html" class="nav-item nav-item-inactive">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="visitors.html" class="nav-item nav-item-active">
+                        <i data-lucide="users"></i>
+                        <span>Visitors</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="logs.html" class="nav-item nav-item-inactive">
+                        <i data-lucide="history"></i>
+                        <span>Access Logs</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button onclick="handleLogout()" class="logout-btn">
+                <i data-lucide="log-out"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="content custom-scrollbar">
+
+        <!-- HEADER -->
+        <header class="visitor-header flex justify-between items-center">
+            <h1><i class="fa-solid fa-user"></i> Visitor Profiler</h1>
+
+            <div class="flex items-center gap-4">
+                <div class="text-sm text-gray-500">
+                    <span id="date-display"></span> |
+                    <span id="time-display"></span>
+                </div>
+
+                <button id="openRegister" class="btn btn-success">
+                    <i class="fa-solid fa-user-plus"></i> Add New Visitor
+                </button>
+            </div>
+        </header>
+
+        <!-- REGISTER MODAL -->
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>  
+
+                <h2><i class="fa-solid fa-user-plus"></i> Register New Visitor</h2>
+
+                <div class="form-group">
+                    <label for="rfidcards">RFID Cards*</label>
+                    <input id="rfidcards" placeholder="Scan Visitor Badge..." required>
+                </div>
+
+                <div class="model-line">
+                    <div class="form-group">
+                        <label for="last_name">Last Name*</label>
+                        <input id="last_name" placeholder="Enter Your Last Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="first_name">First Name*</label>
+                        <input id="first_name" placeholder="Enter Your First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="middle_name">Middle Name*</label>
+                        <input id="middle_name" placeholder="Enter Your Middle Name" required>
+                    </div>
+                </div>
+
+                <!-- ADDRESS -->
+                <div class="address-line">
+                    <div class="address-group">
+                        <label>Province*</label>
+                        <input list="provinceList" id="province" placeholder="Select province..." required>
+                        <datalist id="provinceList"></datalist>
+                    </div>
+
+                    <div class="address-group">
+                        <label for="municipality">Municipality*</label>
+                        <input list="municipalityList" id="municipality" placeholder="Select municipality..." required>
+                        <datalist id="municipalityList"></datalist>
+                    </div>
+
+                    <div class="address-group">
+                        <label for="barangay">Barangay*</label>
+                        <input list="barangayList" id="barangay" placeholder="Select barangay..." required>
+                        <datalist id="barangayList"></datalist>
+                    </div>
+
+                    <div class="address-group zip">
+                        <label>ZIP Code*</label>
+                        <input id="zipcode" placeholder="Enter ZIP code..." readonly>
+                    </div>
+                </div>
+
+                <div class="btn-container">
+                    <button id="registerBtn" class="btn btn-success">Register Visitor</button>
+                </div>
+            </div>
+        </div>
+        
+
+             <!-- TOP CARDS -->
+            <div class="top-cards">
+                <div class="card-v">
+                    <div class="card-header blue-header">
+                        <i class='bx bxs-credit-card'></i> Top your RFID Card
+                        </div>
+                        <div class="checkin-body">
+                            <p class="input-label">Visitor Tag UID</p>
+                            <div class="input-group">
+                                <i class='bx bxs-credit-card'></i>  
+                                <input type="text" id="visitor-uid" placeholder="Scan Visitor Badge...">
+
+                                <div id="visitorModal" class="modal-overlay">
+                                    <div class="visitor-popup">
+                                        <h2><i class='bx'></i> Visitor Detected</h2>
+                                        
+                                        <div class="credential-info">
+                                            <p><strong>Name:</strong> <span id="displayFullName">Loading...</span></p>
+                                        </div>
+                                        <div id="checkInFields">
+                                            <label for="personToVisit" style="font-size: 0.8rem; color: #666;">Host / Person to Visit*</label>
+                                        <input list="personList" id="personToVisit" placeholder="Search person..." required>
+                                            <datalist id="personList"></datalist>
+                                            
+                                            <label for="purpose" style="font-size: 0.8rem; color: #666;">Purpose of Visit*</label>
+                                            <input list="purposeList" id="purpose" placeholder="Search purpose..." required>
+                                            <datalist id="purposeList"></datalist>
+                                        </div>
+                                        <p id="statusMessage"></p>
+                                        <div class="modal-actions">
+                                        <button id="submitBtn">Confirm Action</button>
+                                        <button id="cancelVisitor">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="helper-text">Place the RFID badge near the reader</p>
+                        </div>
+                    </div>
+                    <div class="card-v">
+                        <div class="card-header teal-header">
+                            <i data-lucide="trending-up"></i> Today's Summary
+                        </div>
+                        <div class="stats-body">
+                        <div class="stat-row"><span>Currently Inside :</span> <strong id="totalRecords">0</strong></div>
+                        <div class="stat-row"><span>Currently Inside Today :</span> <strong id="count-total" class="text-success">0</strong></div>
+                        <div class="stat-row"><span>Checked Out Today :</span> <strong id="count-checked" class="text-danger">0</strong></div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- TABLE -->
+                    <div class="card table-card">
+                        <div class="table-header">
+                            <h3>Recent Activity</h3>
+                            <input id="searchVisitor" class="table-search" placeholder="Search Visitors">
+                        </div>
+
+                        <div class="table-wrapper">
+                            <table class="modern-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Tag UID</th>
+                                        <th>Visitor Name</th>
+                                        <th>Person to Visit</th>
+                                        <th>Purpose</th>
+                                        <th>Check In</th>
+                                        <th>Check Out</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="visitor-table"></tbody>
+                            </table>
+                        </div>
+                        <div class="table-footer">
+
+                            <span>Total visitors <b id="totalVisitors">0</b> records</span>
+
+                            <div class="table-footer-right">
+                                <!-- Pagination Buttons -->
+                            <div class="pagination" id="pageNumbers">
+                                <button id="prevPage">‹</button>
+                                <span id="numericPages"></span>
+                                <button id="nextPage">›</button>
+                            </div>
+
+                                <!-- Rows per page dropdown -->
+                                <select id="rowsSelect" class="rows-select">
+                                <option value="10">10 / page</option>
+                                <option value="20">20 / page</option>
+                                <option value="50">50 / page</option>
+                                <option value="100">100 / page</option>
+                                </select>
+                         </div>
+                </div> 
+            </main>
+        <div id="toastContainer" class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+
+        <!-- SCRIPTS -->
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            lucide.createIcons();
+
+            function updateTime() {
+                const now = new Date();
+                document.getElementById("date-display").textContent = now.toDateString();
+                document.getElementById("time-display").textContent = now.toLocaleTimeString();
+            }
+
+            setInterval(updateTime, 1000);
+            updateTime();
+        });
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <script src="../handle_Form/handle-input/handle_generate_input_address.js"></script>
+        <script src="../handle_Form/function/handle_popup_button.js"></script>
+        <script src="../handle_Form/handle-fucos-input/handle_focus_controll.js"></script>
+        <script src="../handle_Form/handle-total/controll_total_entry.js"></script>
+        <script src="../handle_Form/handle-input/handle_generate_input_purpose.js"></script>
+
+        <script type="module" src="../../loading-page.js"></script>
+        <script type="module" src="../../RFID_server.js"></script>
+
+    </body>
+</html>

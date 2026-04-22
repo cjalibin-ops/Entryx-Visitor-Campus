@@ -1,4 +1,4 @@
-const API_URL = "http://localhost/Entryx-Visitor-Campus/EntryX-Security-dashboard/backend/registration/backend-handle-top.php";
+const API_URL = "http://localhost/Entryx-Visitor-Campus/EntryX-main-Page/EntryX-Security-dashboard/backend/registration/visitor-handle-top.php";
 
 async function loadVisitors() {
 

@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap');
 
+
 :root {
   --sidebar-bg: #1e293b;
   --main-bg: #f1f5f9;
@@ -73,8 +74,9 @@ body {
     margin-bottom: 25px;
 }
 
-.visitor-hearder h1{
-    font-size: 24px;
+.visitor-header h1{
+    font: bold;
+    font-size: 25px;
     font-weight: 800;
 }
 

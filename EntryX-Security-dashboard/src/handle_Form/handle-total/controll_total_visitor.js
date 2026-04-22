@@ -1,7 +1,7 @@
 const countTotalElement = document.getElementById("");
 
 const loadTotalVisitors = () => {
-    fetch('http://localhost/project_EntryX_File/EntryX_Main_File/backend/registration/visitor-register.php', {
+    fetch('http://localhost/Entryx-Visitor-Campus/EntryX-main-Page/EntryX-Security-dashboard/backend/registration/visitor-register.php', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

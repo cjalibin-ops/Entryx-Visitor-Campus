@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	<!-- main CSS -->
+	<link rel="stylesheet" href='../styles/visitor-style.css'>
+	<!--favicon-->
+    <link rel="icon" href="../images/titile.png" type="image/x-icon" />
+	<!-- Title -->
+	<title>EntryX | Admin Dashboard</title>
+</head>
+<body>
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-door-open'></i>
+			<span class="text">EntryX</span>
+		</a>
+		<ul class="side-menu top">
+			<li >
+				<a href='../../index.html'>
+					<i class='bx bxs-dashboard'></i> Dashboard
+				</a>
+			</li>
+			<li class="active">
+				<a href="#">
+					<i class='bx bxs-time'></i> Enter Management
+				</a>
+			</li>
+			<li>
+				<a href="./visitors_management.html">
+					<i class='bx bxs-user'></i> Visitors Register Management
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-time'></i> Schedule Time Today Management
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-group'></i> User Management
+				</a>
+			</li>
+			<li>
+				<a href="./Student_gateaPass_management.html">
+					<i class='bx bxs-id-card'></i>Gate Pass Management
+				</a>
+			</li>
+		</ul>
+
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog'></i> Settings
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout" onclick="confirmLogout(event)">
+					<i class='bx bxs-log-out-circle'></i> Logout
+				</a>
+			</li>
+		</ul>
+
+	</section>
+	<!-- SIDEBAR -->
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<div class="img-pic">
+						<p>UNIVERSITY OF NORTHERN PHILIPPINES</p>
+					</div>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">visitor Time Management's</a>
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="btn-download">
+					<i class='bx bxs-file'></i>
+					<span class="text" onclick="downloadExcel()">Download Excel</span>
+				</a>
+
+			</div>
+		<!-- ----------Table------------------>
+        <div class="card table-card">
+            <div class="table-header">
+              <h3>Recent Activity</h3>
+              <input type="text" id="searchVisitor" class="table-search" placeholder="Search Visitors"> 
+            </div>
+
+            <div class="table-wrapper">
+                <table class="modern-table">
+                    <thead>
+						<tr>
+							<th>#</th>
+							<th>Tag UID</th>
+							<th>Visitor Name</th>
+							<th>Person to Visit</th>
+							<th>Purpose</th>
+							<th>Check In</th>
+							<th>Check Out</th>
+							<th>Date</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+
+                    <tbody id="visitor-table">
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-footer">
+
+              <span>Total visitors <b id="totalVisitors">0</b> records</span>
+
+              <div class="table-footer-right">
+
+                  <div class="table-footer-right">
+					<div class="pagination" id="pageNumbers">
+						<button id="prevPage">‹</button>
+						<button id="nextPage">›</button>
+					</div>
+					<select id="rowsSelect" class="rows-select">
+						<option value="10">10 / page</option>
+						<option value="20">20 / page</option>
+						<option value="50">50 / page</option>
+						<option value="100">100 / page</option>
+					</select>
+					</div>
+            </div>
+        </div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+
+	<!-- Script Content -->
+
+	<!-- Hanlde toggle sidebar in UI  -->
+	<script src='../handle_form/page_function/controll_handle_toggle_sidebar.js'></script>
+
+
+	<script src='../handle_form/handle_table/handle_visitorEnter_data.js'></script>
+</body>
+</html>

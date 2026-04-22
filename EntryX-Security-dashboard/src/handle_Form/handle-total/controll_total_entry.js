@@ -17,7 +17,7 @@
  */
 
 // controll_total_entry.js
-const API_URL = "http://localhost/project_EntryX_File/EntryX_Main_File/backend/registration/backend-handle-top.php";
+const API_URL = "http://localhost/Entryx-Visitor-Campus/EntryX-main-Page/EntryX-Security-dashboard/backend/registration/visitor-handle-top.php";
 
 // TABLE & DASHBOARD ELEMENTS
 const visitorTable = document.getElementById("visitor-table");

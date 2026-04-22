@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="src/styles/main-style.css">
+	<!--favicon-->
+    <link rel="icon" href="src/images/titile.png" type="image/x-icon" />
+	<!-- Title -->
+	<title>EntryX | Admin Dashboard</title>
+</head>
+<body>
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-door-open'></i>
+			<span class="text">EntryX</span>
+		</a>
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="#">
+					<i class='bx bxs-dashboard'></i> Dashboard
+				</a>
+			</li>
+			<li>
+				<a href="src/pages/visitors_time_managent.html">
+					<i class='bx bxs-time'></i> Enter Management
+				</a>
+			</li>
+			<li>
+				<a href="src/pages/visitors_management.html">
+					<i class='bx bxs-user'></i> Visitors Register Management
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-time'></i> Schedule Enter Today
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-group'></i> User Management
+				</a>
+			</li>
+			<li>
+				<a href="src/pages/Student_gateaPass_management.html">
+					<i class='bx bxs-id-card'></i>Gate Pass Management
+				</a>
+			</li>
+		</ul>
+
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog'></i> Settings
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout" onclick="confirmLogout(event)">
+					<i class='bx bxs-log-out-circle'></i> Logout
+				</a>
+			</li>
+		</ul>
+
+	</section>
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<!--<a href="#" class="nav-link">Welcome to EntryX</a>-->	
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<div class="img-pic">
+						<p>UNIVERSITY OF NORTHERN PHILIPPINES</p>
+					</div>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+
+				<!--<a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a>-->
+			</div>
+			<!-- STATISTICS -->
+			<div class="dashboard-container">
+
+				<!-- TOP STATISTICS -->
+				<div class="stats-container">
+
+					<div class="stats-card">
+						<span class="badge" id="Register_day">0</span>
+						<div class="stats-icon">
+							<i class='bx bxs-group'></i>
+						</div>
+						<h2 id="total_Register_Visitors"></h2>
+						<p>Total Registered Visitor</p>
+						<button>Find More</button>
+					</div>
+
+					<div class="stats-card">
+						<span class="badge" id="badge_day">0</span>
+						<div class="stats-icon">
+							<i class='bx bxs-calendar'></i>
+						</div>
+						<h2 id="total_day"></h2>
+						<p>Total Today Enter</p>	
+						<button>Find More</button>
+					</div>
+
+					<div class="stats-card">
+						<span class="badge" id="badge_week">0</span>
+						<div class="stats-icon">
+							<i class='bx bxs-calendar-week'></i>
+						</div>
+						<h2 id="total_week"></h2>
+						<p>Total Week Enter</p>
+						<button>Find More</button>
+					</div>
+
+					<div class="stats-card">
+						<span class="badge" id="badge_month">0</span>
+						<div class="stats-icon">
+							<i class='bx bxs-calendar-event'></i>
+						</div>
+						<h2 id="total_month"></h2>
+						<p>Total Month Enter</p>
+						<button>Find More</button>
+					</div>
+
+				</div>
+
+
+				<!-- CHART SECTION -->
+				<div class="charts-wrapper">
+
+					<!-- LEFT BIG CHART -->
+					<div class="chart-card large-chart">
+						<div class="chart-header">
+							<h3>Real Time Campaign Metrics Statistics</h3>
+							<p>Global and country campaign statistics</p>
+
+							<h2>The Chart is under development</h2>
+						</div>
+						<canvas id="visitorBarChart"></canvas>
+					</div>
+
+
+					<!-- RIGHT SMALL CHARTS -->
+					<div class="small-charts">
+
+						<div class="chart-card">
+							<h4>Registered Visitor</h4>
+							<canvas id="registerChart"></canvas>
+						</div>
+
+						<div class="chart-card">
+							<h4>Today Enter</h4>
+							<canvas id="todayChart"></canvas>
+						</div>
+
+						<div class="chart-card">
+							<h4>Week Enter</h4>
+							<canvas id="weekChart"></canvas>
+						</div>
+
+						<div class="chart-card">
+							<h4>Month Enter</h4>
+							<canvas id="monthChart"></canvas>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+			<!--
+			<div class="table-data">
+				<div class="visitors">
+					<div class="head">
+						<h3>Visitors</h3>	
+						<input type="search" placeholder="Search...">
+						<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+						<i class='bx bx-plus' ><a href=""></a></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>UID</th>
+								<th>Name</th>
+								<th>address</th>
+								<th>Reason</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="students">
+					<div class="head">
+						<h3>Gate Pass</h3>
+						<i class='bx bx-plus' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>RFID</th>
+								<th>Name</th>
+								<th>address</th>
+								<th>Reason</th>
+							</tr>
+						</thead>
+					</table>
+					
+				</div>
+			</div>
+		</main>
+	</section>
+	
+	 Script Content -->
+	 
+	<!-- Hanlde toggle sidebar in UI  -->
+	<script type="module" src='./src/handle_form/page_function/controll_handle_toggle_sidebar.js'></script>
+
+
+	<!-- Hanlde toggle sidebar in UI  -->
+	<script type="module" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+	<!-- Hanlde total register dashboard  -->
+	<script type="module" src='./src/handle_form/handle_controll/handle_total_register_dashboard.js'></script>
+	
+	<!-- Hanlde total TWM dashboard  -->
+	<script type="module" src='./src/handle_form/handle_controll/handle_total_TWM_dashboard.js'></script>
+
+</body>
+</html>

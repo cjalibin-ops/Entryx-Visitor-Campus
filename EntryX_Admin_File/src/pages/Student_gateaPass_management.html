@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	<!-- main CSS -->
+	<link rel="stylesheet" href='../styles/gate_pass.css'>
+	<!--favicon-->
+    <link rel="icon" href="../images/titile.png" type="image/x-icon" />
+	<!-- Title -->
+	<title>EntryX | Admin Dashboard</title>
+</head>
+<body>
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-door-open'></i>
+			<span class="text">EntryX</span>
+		</a>
+		<ul class="side-menu top">
+			<li >
+				<a href='../../index.html'>
+					<i class='bx bxs-dashboard'></i> Dashboard
+				</a>
+			</li>
+			<li class="#">
+				<a href="./visitors_time_managent.html">
+					<i class='bx bxs-time'></i> Enter Management
+				</a>
+			</li>
+			<li>
+				<a href="./visitors_management.html">
+					<i class='bx bxs-user'></i> Visitors Register Management
+				</a>
+			</li>
+			<li>
+				<a href="./visitors_time_managent.html">
+					<i class='bx bxs-time'></i> Schedule Time Today Management
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-group'></i> User Management
+				</a>
+			</li>
+			<li class="active">
+				<a href="#">
+					<i class='bx bxs-id-card'></i>Gate Pass Management
+				</a>
+			</li>
+		</ul>
+
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog'></i> Settings
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout" onclick="confirmLogout(event)">
+					<i class='bx bxs-log-out-circle'></i> Logout
+				</a>
+			</li>
+		</ul>
+
+	</section>
+	<!-- SIDEBAR -->
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<!--<a href="#" class="nav-link">Welcome to EntryX</a>-->	
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<div class="img-pic">
+						<p>UNIVERSITY OF NORTHERN PHILIPPINES</p>
+					</div>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">visitors</a>
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="btn-download">
+					<i class='bx bxs-file'></i>
+					<span class="text" onclick="downloadExcel()">Download Excel</span>
+				</a>
+
+			</div>
+
+	<!-- EDIT VISITORS POP UP  -->
+      <div id="edit_Modal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" onclick="closeModal()">&times;</span>
+
+          <h2><i class="fa-solid fa-user-plus"></i>Gate Pass Information</h2>
+
+			<div class="form-group">
+            <span>Student information</span>
+          </div>
+          <div class="form-group">
+				<label for="rfidcards">Student ID*</label>
+           		<input id="student_ID" placeholder="Enter Your Student ID" required>
+          </div>
+		  <div class="model-line">
+				<div class="form-group">
+					<label for="firstName">First Name*</label>
+					<input id="firstName" placeholder="Enter Your First Name" required>
+				</div>
+				<div class="form-group">
+					<label for="lastName">Last Name*</label>
+					<input id="lastName" placeholder="Enter Your Last Name" required>
+				</div>
+				<div class="form-group">
+					<label for="middleName">Middle Name*</label>
+					<input id="middleName" placeholder="Enter Your Middle Name (Optional)">
+				</div>
+			</div>
+			<div class="model-line">
+				<div class="form-group">
+					<label for="email">Email Address*</label>
+					<input id="email" placeholder="Example@email.com" required>
+				</div>
+				<div class="form-group">
+				<label for="address">Address*</label>
+            	<input id="address" placeholder="barangay, city, province" required>
+				</div>
+			</div>
+
+			<!-- INLINE GROUP -->
+			<div class="model-line">
+				<div class="form-group">
+				<label>Gender*</label>
+				<div class="gender-options">
+					<label><input type="radio" name="gender" value="male" required> Male</label>
+					<label><input type="radio" name="gender" value="female"> Female</label>
+				</div>
+				</div>
+				<div class="form-group">
+					<label>Date of Birth*</label>
+					<input type="date" id="dob" name="dob" required>
+				</div>
+				<div class="form-group">
+					<label>Age*</label>
+					<input type="text" id="age" placeholder="Age" readonly>
+				</div>
+         	 </div>
+			<div class="model-line">
+				<!-- Contact Number -->
+				<div class="form-group">
+					<label>Contact Number*</label>	
+					<input id="contact" placeholder="09XX-XXX-XXXX" required>
+				</div>
+				<!--Date and Year registered-->
+				<div class="form-group">
+					<label>Date/Year Register*</label>	
+					<input type="date" id="contact" placeholder="Date/Year to register" required>
+				</div>
+         	 </div>
+
+			<!-- Year Level, Section, Department/College -->
+			<div class="model-line">
+				<div class="form-group">
+				<label>Year Level*</label>
+				<input id="yearLevel" list="yearLevelList" placeholder="Enter Your Year Level" required>
+				<datalist id="yearLevelList"></datalist>
+				</div>
+
+				<div class="form-group">
+				<label>Section*</label>
+				<input id="section" list="sectionList" placeholder="Enter Your Section" required>
+				<datalist id="sectionList"></datalist>
+				</div>
+
+				<div class="form-group">
+				<label>College/Department*</label>
+				<input id="department" list="departmentList" placeholder="Enter Your Department/College" required>
+				<datalist id="departmentList"></datalist>
+				</div>
+			</div>
+
+          <!-- CENTERED BUTTON -->
+          <div class="btn-container">
+            <button id="registerBtn" class="btn btn-success">Register Gate Pass</button>
+          </div>
+        </div>
+      </div>
+
+		<!-- ----------Table------------------>
+        <div class="card table-card">
+			<div class="table-header">
+			<h3>Recent Activity</h3>
+
+			<div style="display:flex; gap:10px; align-items:center;">
+				<input type="text" id="searchVisitor" class="table-search" placeholder="Search Visitors">
+
+				<button class="add-btn" onclick="openModal()">
+				+ Add New Person
+				</button>
+			</div>
+			</div>
+
+            <div class="table-wrapper">
+                <table class="modern-table">
+                    <thead>
+						<tr>
+							<th>#</th>
+							<th>Student ID</th>
+							<th>Full Name</th>
+							<th>address</th>
+							<th>Email Address</th>
+							<th>Gender</th>
+							<th>Date of Birth</th>
+                            <th>Contact Number</th>
+							<th>Year Register</th>
+                            <th>Year Level</th>
+                            <th>Section</th>
+                            <th>Department/College</th>
+							<th>Status</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+
+                    <tbody id="visitor-table"></tbody>
+                </table>
+            </div>
+            <div class="table-footer">
+
+              <span>Total visitors <b id="total_Register_Visitors"></b> records</span>
+
+              <div class="table-footer-right">
+
+                  <div class="table-footer-right">
+					<!-- Pagination Buttons -->
+					<div class="pagination" id="pageNumbers">
+						<!-- Previous Page Button -->
+						<button id="prevPage">‹</button>
+						<!-- Next Page Button -->
+						<button id="nextPage">›</button>
+					</div>
+
+					<!-- Rows per page dropdown -->
+					<select id="rowsSelect" class="rows-select">
+						<option value="10">10 / page</option>
+						<option value="20">20 / page</option>
+						<option value="50">50 / page</option>
+						<option value="100">100 / page</option>
+					</select>
+				</div>
+            </div>
+        </div>
+		</main>
+		    <!-- Toast container -->
+	</section>
+	<!-- CONTENT -->
+
+</body>
+	<!-- Hanlde toggle sidebar in UI  -->
+	<script src='../handle_form/page_function/controll_handle_toggle_sidebar.js'></script>
+
+	<!-- Handle gate pass generation -->
+	<script src="../handle_form/handle_gatePass/handle_generate/handle_popUp_connection.js"></script>
+	
+	<!-- Handle year level, section, department/college data population -->
+	<script src='../handle_form/handle_gatePass/handle_generate/handle_generate_year_section_CD.js'></script>
+
+</html>

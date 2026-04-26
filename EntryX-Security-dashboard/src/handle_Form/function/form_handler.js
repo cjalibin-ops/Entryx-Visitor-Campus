@@ -19,3 +19,4 @@ document.getElementById('contact-form').addEventListener('submit', function(even
           };
           xhr.send(formData);
       });
+      

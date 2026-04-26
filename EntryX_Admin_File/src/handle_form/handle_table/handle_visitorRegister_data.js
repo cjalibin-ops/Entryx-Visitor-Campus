@@ -172,7 +172,7 @@ function openModal() {
 
 
 // Update visitor on form submit
-document.getElementById("registerBtn").addEventListener("click", async () => {
+document.getElementById("   ").addEventListener("click", async () => {
     
 
     // Get current values from form

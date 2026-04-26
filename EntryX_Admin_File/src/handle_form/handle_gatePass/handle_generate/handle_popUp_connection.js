@@ -1,21 +1,33 @@
-// --- Open modal ---
-function openModal() {
-    console.log("Modal opened");
-    const modal = document.getElementById("edit_Modal");
-    modal.style.display = "flex";
+// ================= EDIT MODAL CONTROL =================
 
+// --- Open modal ---
+function openEditModal() {
+    console.log("Modal opened");
+
+    const modal = document.getElementById("edit_Modal");
+    if (!modal) return;
+
+    modal.style.display = "flex";
 }
 
 // --- Close modal ---
-function closeModal() {
+function closeEditModal() {
     console.log("Modal closed");
+
     const modal = document.getElementById("edit_Modal");
+    if (!modal) return;
+
     modal.style.display = "none";
 }
 
-window.addEventListener("DOMContentLoaded", function () {
+// --- Always hide on page load ---
+window.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("edit_Modal");
-    modal.style.display = "none"; // always hide on refresh
+    if (modal) {
+        modal.style.display = "none";
+    }
 });
 
-
+// --- Expose to HTML ---
+window.openEditModal = openEditModal;
+window.closeEditModal = closeEditModal;

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	<!-- main CSS -->
+	<link rel="stylesheet" href='../styles/user-style.css'>
+	<!--favicon-->
+    <link rel="icon" href="../images/titile.png" type="image/x-icon" />
+	<!-- Title -->
+	<title>EntryX | Admin Dashboard</title>
+</head>
+<body>
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-door-open'></i>
+			<span class="text">EntryX</span>
+		</a>
+		<ul class="side-menu top">
+			<li >
+				<a href='../../index.html'>
+					<i class='bx bxs-dashboard'></i> Dashboard
+				</a>
+			</li>
+			<li class="#">
+				<a href="#">
+					<i class='bx bxs-time'></i>Enter Management
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-user'></i> Visitors Register Management
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-time'></i> Daily Schedule Management
+				</a>
+			</li>
+			<li class="active">
+				<a href="#">
+					<i class='bx bxs-group'></i> User Management
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-id-card'></i>Student Gate Pass Management
+				</a>
+			</li>
+            <li>
+				<a href="#">
+					<i class='bx bxs-id-card'></i>Vehicle Gate Pass Management
+				</a>
+			</li>
+		</ul>
+
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog'></i> Settings
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout" onclick="confirmLogout(event)">
+					<i class='bx bxs-log-out-circle'></i> Logout
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<div class="img-pic">
+						<p>UNIVERSITY OF NORTHERN PHILIPPINES</p>
+					</div>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">User Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">User Management</a>
+						</li>
+					</ul>
+				</div>
+				<!--
+				<a href="#" class="btn-download">
+					<i class='bx bxs-file'></i>
+					<span class="text" onclick="downloadExcel()">Download Excel</span>
+				</a>
+				-->
+
+			</div>
+
+			<!-- EDIT VISITORS POP UP  -->
+			<div id="add_Modal" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closeModal()">&times;</span>
+
+				<h2><i class="fa-solid fa-user-plus"></i> Security Registration</h2>
+
+				<!-- USER ID -->
+				<div class="form-group">
+					<label>User ID*</label>
+					<input 
+						type="text"
+						id="userId" 
+						placeholder="Your User ID.." 
+						required
+					>
+				</div>
+
+				<!-- USER NAME -->
+				<div class="form-group">
+					<label>User Name*</label>
+					<input 
+						type="text"
+						id="userName" 
+						placeholder="Your User Name.." 
+						required
+					>
+				</div>
+
+				<!-- PASSWORD -->
+				<div class="form-group">
+					<label>Password*</label>
+					<input 
+						type="password" 
+						id="password" 
+						placeholder="Your Password.." 
+						required
+					>
+				</div>
+
+				<div class="form-group">
+				<label>User Type*</label>
+				<select id="userType" required>
+					<option value="">Select Role</option>
+					<option value="admin">Admin</option>
+					<option value="guard">Guard</option>
+				</select>
+				</div>
+
+				<!-- BUTTON -->
+				<div class="btn-container">
+				<button id="registerBtn" class="btn btn-success">
+					Register User
+				</button>
+				</div>
+
+			</div>
+			</div>
+
+		<!-- ----------Table------------------>
+        <div class="card table-card">
+			<div class="table-header">
+			<h3>Recent Activity</h3>
+
+			<div style="display:flex; gap:10px; align-items:center;">
+				<input type="text" id="searchVisitor" class="table-search" placeholder="Search Visitors">
+				
+				<button class="add-btn" onclick="openModal()">
+				+ Add New Person
+				</button>
+			</div>
+			</div>
+
+            <div class="table-wrapper">
+                <table class="modern-table">
+                    <thead>
+						<tr>
+							<th>#</th>
+							<th>User ID</th>
+							<th>User Name</th>
+							<th>User Type</th>
+							<th>Password</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+
+                    <tbody id="visitor-table"></tbody>
+                </table>
+            </div>
+            <div class="table-footer">
+
+              <span>Total visitors <b id="total_Register_Visitors"></b> records</span>
+
+              	<div class="table-footer-right">
+
+					<div class="table-footer-right">
+						<!-- Pagination Buttons -->
+                            <div class="pagination" id="pageNumbers">
+                                <button id="prevPage">‹</button>
+                                <span id="numericPages"></span>
+                                <button id="nextPage">›</button>
+                            </div>
+
+					</div>
+            	</div>
+       	 	</div>
+		</div>
+		    <!-- Toast container -->
+			 <div id="toastContainer" class="toast-container position-fixed top-0 end-0 p-3"></div>
+	</section>
+	<!-- CONTENT -->
+
+</body>
+	<div id="toastContainer" class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+	<!-- Script Content -->
+	<script src='../handle_form/handle_table/handle_userRegister.js'></script>
+
+	<!-- Handle gate pass generation -->
+	<script src="../handle_form/handle_gatePass/handle_generate/handle_popUp_connection.js"></script>
+
+	<!-- SweetAlert2 -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- Hanlde toggle sidebar in UI  -->
+	 <script src='../handle_form/page_function/controll_handle_toggle_sidebar.js'></script>
+
+
+</html>

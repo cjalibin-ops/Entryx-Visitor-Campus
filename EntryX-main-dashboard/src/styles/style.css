@@ -544,7 +544,6 @@ html {
   flex-direction: column;
 }
 
-
 .day-label {
   font-weight: 700;
   color: #cbd5e1;
@@ -620,11 +619,7 @@ html {
     flex-direction: row;
     justify-content: space-between;
   }
-    .hour-item {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+  
 }
 
 .footer-bottom-links {

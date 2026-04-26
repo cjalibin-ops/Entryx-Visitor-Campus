@@ -12,3 +12,4 @@ document.getElementById("registerBtn").addEventListener("click", registerVisitor
 // Load visitors on page load
 window.addEventListener("DOMContentLoaded", loadVisitors);
 
+

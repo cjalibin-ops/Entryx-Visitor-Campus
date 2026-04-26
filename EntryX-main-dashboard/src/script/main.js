@@ -168,41 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 9. Sign-In Functionality (Specific to signin.html)
-    const togglePasswordBtn = document.getElementById('toggle-password');
-    const passwordInput = document.getElementById('password-input');
-
-    if (togglePasswordBtn && passwordInput) {
-        togglePasswordBtn.addEventListener('click', () => {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            
-            const icon = togglePasswordBtn.querySelector('i');
-            if (type === 'text') {
-                icon.setAttribute('data-lucide', 'eye-off');
-            } else {
-                icon.setAttribute('data-lucide', 'eye');
-            }
-            lucide.createIcons();
-        });
-    }
-
-    const signinForm = document.getElementById('signin-form');
-    if (signinForm) {
-        signinForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const submitBtn = signinForm.querySelector('button[type="submit"]');
-            const originalContent = submitBtn.innerHTML;
-            
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<div class="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>';
-            
-            setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 1500);
-        });
-    }
-
     // 10. Policy Tab Logic (Specific to policy.html)
     const policyTabs = document.querySelectorAll('.policy-tab');
     const policyPanes = document.querySelectorAll('.policy-pane');
@@ -365,3 +330,4 @@ buttons.forEach(btn => {
       }
     }
   }
+  

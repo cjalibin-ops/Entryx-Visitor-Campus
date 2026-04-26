@@ -29,6 +29,7 @@ export function showToast(message, type = "success") {
     <div class="toast-progress"></div>
   `;
 
+  
   container.appendChild(toastEl);
 
   const progress = toastEl.querySelector(".toast-progress");

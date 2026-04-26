@@ -51,7 +51,7 @@
 			</li>
 			<li class="active">
 				<a href="#">
-					<i class='bx bxs-id-card'></i>Gate Pass Management
+					<i class='bx bxs-id-card'></i>Student Gate Pass Management
 				</a>
 			</li>
 		</ul>
@@ -222,17 +222,17 @@
                     <thead>
 						<tr>
 							<th>#</th>
-							<th>Student ID</th>
-							<th>Full Name</th>
+							<th>StudentID</th>
+							<th>FullName</th>
 							<th>address</th>
-							<th>Email Address</th>
+							<th>Email</th>
 							<th>Gender</th>
-							<th>Date of Birth</th>
-                            <th>Contact Number</th>
-							<th>Year Register</th>
-                            <th>Year Level</th>
+							<th>DOB</th>
+                            <th>ConNum</th>
+							<th>YearReg</th>
+                            <th>YearLev</th>
                             <th>Section</th>
-                            <th>Department/College</th>
+                            <th>College/Depart..</th>
 							<th>Status</th>
 							<th>Action</th>
 						</tr>
@@ -245,28 +245,28 @@
 
               <span>Total visitors <b id="total_Register_Visitors"></b> records</span>
 
-              <div class="table-footer-right">
+              	<div class="table-footer-right">
 
-                  <div class="table-footer-right">
-					<!-- Pagination Buttons -->
-					<div class="pagination" id="pageNumbers">
-						<!-- Previous Page Button -->
-						<button id="prevPage">‹</button>
-						<!-- Next Page Button -->
-						<button id="nextPage">›</button>
+					<div class="table-footer-right">
+						<!-- Pagination Buttons -->
+						<div class="pagination" id="pageNumbers">
+							<!-- Previous Page Button -->
+							<button id="prevPage">‹</button>
+							<!-- Next Page Button -->
+							<button id="nextPage">›</button>
+						</div>
+
+						<!-- Rows per page dropdown -->
+						<select id="rowsSelect" class="rows-select">
+							<option value="10">10 / page</option>
+							<option value="20">20 / page</option>
+							<option value="50">50 / page</option>
+							<option value="100">100 / page</option>
+						</select>
 					</div>
-
-					<!-- Rows per page dropdown -->
-					<select id="rowsSelect" class="rows-select">
-						<option value="10">10 / page</option>
-						<option value="20">20 / page</option>
-						<option value="50">50 / page</option>
-						<option value="100">100 / page</option>
-					</select>
-				</div>
-            </div>
-        </div>
-		</main>
+            	</div>
+       	 	</div>
+		</div>
 		    <!-- Toast container -->
 	</section>
 	<!-- CONTENT -->

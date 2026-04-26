@@ -139,7 +139,7 @@ html {
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 9999px;
-  font-size: 0.875rem;
+  font-size: 0.775rem;
   font-weight: 600;
   color: #475569;
   text-decoration: none;
@@ -151,8 +151,8 @@ html {
 }
 
 .nav-link i {
-  width: 1rem;
-  height: 1rem;
+  width: 0.565rem;
+  height: 0.565rem;
 }
 
 /* Divider & Sign In Button */
@@ -544,9 +544,10 @@ html {
   flex-direction: column;
 }
 
+
 .day-label {
   font-weight: 700;
-  color: #cbd5e1; /* text-slate-300 */
+  color: #cbd5e1;
 }
 
 .text-closed {
@@ -618,6 +619,11 @@ html {
   .footer-bottom {
     flex-direction: row;
     justify-content: space-between;
+  }
+    .hour-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 

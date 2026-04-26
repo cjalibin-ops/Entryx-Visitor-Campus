@@ -4,7 +4,7 @@ import { showToast } from "../handle_Form/handle-input-value-visitor/handle_RFID
 const API_TOKEN = "SuperSecretToken123";
 
 export const apiClient = axios.create({
-  baseURL: "http://localhost/Entryx-Visitor-Campus/EntryX-main-Page/EntryX-Security-dashboard/backend/registration/visitor-handle-top.php",
+  baseURL: "http://localhost/Entryx-Visitor-Campus/EntryX-Security-dashboard/backend/registration/visitor-handle-top.php",
   headers: {
     "Content-Type": "application/json",
     "Authorization": `Bearer ${API_TOKEN}` 
